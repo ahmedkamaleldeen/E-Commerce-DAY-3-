@@ -1,0 +1,32 @@
+ <h1 class="text-center bg-dark p-5" style="font-weight: 900;color:red;">Login Page</h1>
+<div class="container my-5">
+  <form #form="ngForm" (ngSubmit)="submit(form)">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" ngModel name="Email"
+        #Email="ngModel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+      <small class="text-danger" *ngIf="Email.touched&&Email.invalid">
+
+
+        <small class="text-danger" *ngIf="Email.errors?.['required']">
+          Field is required
+        </small>
+        <small class="text-danger" *ngIf="Email.errors?.['pattern']">
+          you should match pattern
+        </small>
+      </small>
+
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" ngModel name="Password" #Password="ngModel"
+        required>
+      <small class="text-danger" *ngIf="Password.touched&&Password.invalid">
+
+        <div class="danger" *ngIf="Password.errors?.['required']"> Field is required</div>
+      </small>
+    </div>
+    <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Submit</button>
+  </form>
+</div>
