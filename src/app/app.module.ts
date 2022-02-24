@@ -10,6 +10,9 @@ import { ProductcardComponent } from './productcard/productcard.component';
 import { CoinPipe } from './coin.pipe';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { FooterComponent } from './footer/footer.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { RegisterComponent } from './register/register.component';
     ProductcardComponent,
     CoinPipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    FooterComponent,
+    PagenotfoundComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
