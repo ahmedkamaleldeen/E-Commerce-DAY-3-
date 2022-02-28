@@ -13,6 +13,9 @@ export class ProductlistService {
   getproductbyID(ID:any){
     return this.http.get(`https://fakestoreapi.com/products/${ID}`)
    }
+   removeCard(){
+     this.http.delete('https://fakestoreapi.com/products/id')
+   }
    getproduct(){
     return this.product;
   }
