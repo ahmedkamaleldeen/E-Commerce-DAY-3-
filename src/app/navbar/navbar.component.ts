@@ -19,5 +19,8 @@ product:any;
   // setproduct(){
   //   this.couterservice.setproduct(this.product);
   // }
+  showProducts(){
+
+  }
 
 }

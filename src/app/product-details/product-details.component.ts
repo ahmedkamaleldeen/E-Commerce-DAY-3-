@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductDetailsComponent implements OnInit {
   // products: any;
   productdetails: any;
-  productsChoosed:any;
+  productsChoosed:any=[];
   constructor(
     private router: ActivatedRoute,
     private productlist: ProductlistService,
@@ -36,8 +36,8 @@ export class ProductDetailsComponent implements OnInit {
     this.productlist.getproductbyID(ID).subscribe((result: any) => {
       this.productdetails = result;
       console.log(result);
-      this.productsChoosed.push(result);
-      console.log(this.productsChoosed);
+
+      // console.log(this.productsChoosed);
 
 
       // this.productlist.setproduct(result);
@@ -46,12 +46,14 @@ export class ProductDetailsComponent implements OnInit {
     // this.productlist.getproductlist().subscribe(val=>{this.productsChoosed=val
     // // console.log(val);
     // });
-
-
   });
-
   // console.log(this.productsChoosed);
 }
+// showconsole(){
+//   this.productsChoosed.push(this.productdetails);
+//   console.log(this.productsChoosed);
+//   this.productlist.setproduct(this.productsChoosed);
+// }
 
 }
 

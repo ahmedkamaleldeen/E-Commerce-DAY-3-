@@ -11,11 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CardsComponent implements OnInit {
 product:any;
+counter=0;
   constructor(
     private activatedrouter: ActivatedRoute,
     private router: Router,
     private productlist: ProductlistService,
-    private counter:CounterService
+    private counterservice:CounterService
   ) {}
 
   ngOnInit(): void {
@@ -36,10 +37,15 @@ product:any;
     this.productlist.getproduct().subscribe(val=>{this.product=val
       console.log(val);
     });
+    this.counterservice.getCounter().subscribe(val=>this.counter=val);
   }
   // ShowDetails(){
   //   this.router.navigate(['/card',this.products.id])
   // }
-
-
+  increase(){
+    this.counterservice.setCounter(++this.counter);
+  }
+  decrease(){
+    this.counterservice.setCounter(--this.counter);
+  }
 }

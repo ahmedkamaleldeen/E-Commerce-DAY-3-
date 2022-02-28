@@ -1,10 +1,19 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12 d-flex justify-content-center m-5">
-    <a class="btn btn-primary" style="width: 50px;">+</a>
-    <li *ngFor="let card of product">{{card.title}}</li>
-    <a class="btn btn-primary" style="width: 50px;">-</a>
+    <div class="col-4"  *ngFor="let card of product">
+    <!-- <a class="btn btn-primary" style="width: 50px;">+{{counter}}</a> -->
+    <!-- <li *ngFor="let card of product">{{card.title}}</li> -->
+    <div class="card m-5"  style="width: 18rem;height: 400px;">
+      <img src="{{card.image}}" width="200px" height="200px" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{card.title}}</h5>
+        <p class="card-text">{{card.price|coin}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <!-- <a class="btn btn-primary" style="width: 50px;" >-</a> -->
+
   </div>
 
   </div>
