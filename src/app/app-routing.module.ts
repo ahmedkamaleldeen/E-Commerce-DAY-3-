@@ -1,3 +1,4 @@
+import { CardsComponent } from './cards/cards.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductcardComponent } from './productcard/productcard.component';
 import { ProductlistComponent } from './productlist/productlist.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:"",component:ProductlistComponent},
   {path:"login",component:LoginComponent},
   {path:"productdetails/:id",component:ProductDetailsComponent},
+  {path:"cards",component:CardsComponent},
   {path:"**",component:PagenotfoundComponent},
 
 ];
