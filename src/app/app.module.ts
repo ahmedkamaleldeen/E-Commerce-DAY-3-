@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CardsComponent } from './cards/cards.component';
+import { RequestInterceptor } from './request.interceptor';
+import { SpinnerComponent } from './spinner/spinner.component';
+// import {RequestInterceptor} from './request.interceptor'
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { CardsComponent } from './cards/cards.component';
     FooterComponent,
     PagenotfoundComponent,
     ProductDetailsComponent,
-    CardsComponent
+    CardsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,11 @@ import { CardsComponent } from './cards/cards.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:RequestInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
